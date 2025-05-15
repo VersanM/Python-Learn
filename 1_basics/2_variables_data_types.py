@@ -215,4 +215,80 @@ print(f"New Tuple = {tup}")
 a, b, c = (1, 2, 3) # a = 1, b = 2, c = 3
 a, *b, c = (1, 2, 3, 4)  # a is now 1, b is now [2, 3] and c is now 4
 
+# Dictionary 
+print("-------Dictionary-------")
+empty_dict = {}
+my_dict = {"one": 1, "two": 2} # keys need to be immutable types 
+
+print(f"my_dict = {my_dict}")
+print(f"my_dict[\"one\"] = {my_dict['one']}") # => 1
+
+dict_keys = list(my_dict.keys()) # list is used to convert the result to a list
+print(f"my_dict keys = {dict_keys}")
+
+dict_values = list(my_dict.values())
+print(f"my_dict values = {dict_values}")
+
+"one" in my_dict # => True - in searches for the key
+1 in my_dict # => False
+print(f"one in my_dict => {"one" in my_dict}")
+print(f"1 in my_dict => {1 in my_dict}")
+
+# my_dict['four'] # => KeyError
+# use the get() to avoid KeyError
+my_dict.get('one') # => 1
+my_dict.get('four') # => None
+my_dict.get('four', 4) # => 4 - uses the default value parameter 
+
+# Insert in Dictionary
+# setdefault - sets a value only if the key isn't present
+my_dict.setdefault("five", 5) # => my_dict['five'] is 5
+my_dict.setdefault("five", 6) # => my_dict['five'] is still 5
+
+my_dict.update({"four": 4})
+print(f"my_dict after adding 4 => {my_dict}")
+my_dict["six"] = 6 
+print(f"my_dict after adding 6 => {my_dict}")
+
+# Delete
+del my_dict['two']
+print(f"my_dict after deleting two => {my_dict}")
+
+# Sets 
+print("-------Set-------")
+empty_set = set()
+my_set = {1, 1, 2, 2, 3, 4} # elements in a set need to be immutable
+print(f"my_set = {my_set}")
+
+# invalid_set = {[1], 1} # TypeError => [1] is not immutable
+
+# Add
+my_set.add(5)
+print(f"my_set after adding 5 => {my_set}")
+my_set.add(5)
+print(f"my_set after adding another 5 => {my_set}")
+
+other_set = {3, 4, 5}
+print(f"other_set = {other_set}")
+
+# set intersection
+print(f"my_set & other_set = {my_set & other_set}") # => the intersection of the sets => {3, 4, 5}
+# set union
+print(f"my_set | other_set = {my_set | other_set}") # => the union of the sets => {1, 2, 3, 4, 5}
+# set difference
+print(f"my_set - other_set = {my_set - other_set}") # => the difference of the sets => {1, 2}
+# set simetric difference
+print(f"my_set ^ other_set = {my_set ^ other_set}") # => the simetric difference of the sets => {1, 2}
+{1, 2, 3, 4} ^ {2, 3, 5}  # => {1, 4, 5}
+# check if left set is superset of the right one
+{1, 2} >= {1, 2, 3} # => False
+{1, 2} <= {1, 2, 3} # => True
+
+2 in my_set   # => True
+10 in my_set  # => False
+
+# Clone set
+filled_set = my_set.copy()  # filled_set is {1, 2, 3, 4, 5}
+filled_set is my_set # => False
+
 
