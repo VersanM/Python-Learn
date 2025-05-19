@@ -1,3 +1,8 @@
+### Control Flow
+
+# to run this file, use the command:
+# python3 1_basics/3_control_flow.py
+
 my_var = 10
 
 # If-Else statement
