@@ -15,6 +15,21 @@ while True:
         if x is not None:
             print(f"Your number is: {x}")
 
+# Handle multiple exacptions
+try:
+    x = int("abc")
+except (RuntimeError, TypeError, NameError, ValueError):
+    pass
+
+try:
+    x = int("abc")
+except RuntimeError:
+    pass
+except ValueError:
+    pass
+except TypeError:
+    pass
+
 # Raise exceptions
 try:
     raise NameError('HiThere')
@@ -36,7 +51,7 @@ finally:
 # Pass
 def risky_operation():
     x = int("abc")
-    
+
 try:
     risky_operation()
 except ValueError:
