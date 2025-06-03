@@ -27,4 +27,25 @@ def my_func_keyword(child3, child2, child1):
 
 my_func_keyword(child1 = "Tom", child2 = "Jerry", child3 = "Spike")
 
+# Default parameter value
+def my_func_default_val(country = "Romania"):
+    print(f"I am from {country}")
 
+my_func_default_val("UK")
+my_func_default_val()
+
+# List param
+fruits = ["kiwi", "apple", "pineapple"]
+def my_func_list_param(food):
+    for item in food:
+        print(item)
+
+my_func_list_param(fruits)
+
+# Return values
+def my_func_double(x):
+    return x * 2
+
+print(my_func_double(2))
+print(my_func_double(5))
+print(my_func_double(10))
