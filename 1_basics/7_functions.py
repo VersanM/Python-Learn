@@ -49,3 +49,10 @@ def my_func_double(x):
 print(my_func_double(2))
 print(my_func_double(5))
 print(my_func_double(10))
+
+# pass Statement 
+# function definition cannot be empty => use pass 
+def my_func_do_nothing():
+    pass
+
+
