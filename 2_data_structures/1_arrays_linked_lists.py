@@ -87,3 +87,30 @@ print(f'Average temperature: {avg}')
 print(f'Max temperature: {max_t}')
 print(f'Min temperature: {min_t}')
 print(f'Temperatures above average: {counter}')
+
+
+## Linked List
+# is a data structure that stores multiple values of the same type
+from collections import deque
+
+print('--------Linked List--------')
+# in Python there's a specific object for double-ended-queue called deque
+l = deque() # empty list
+print(f'Empty list => {l}')
+
+l = deque(['a','b','c'])
+print(f'Linked list => {l}')
+
+# Add
+l.append('d')
+print(f'Linked list after appending \'d\' => {l}')
+l.appendleft('z')
+print(f'Linked list after appending \'z\' left => {l}')
+
+# Remove
+x = l.pop()
+print(f'Linked list after pop => {l}')
+print(f'Poped element => {x}')
+x = l.popleft()
+print(f'Linked list after pop left => {l}')
+print(f'Poped element => {x}')
