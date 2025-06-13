@@ -146,3 +146,53 @@ first = stack.popleft()
 
 print(f'Stack after pop => {stack}')
 print(f'Stack poped element => {first}')
+
+# Simulate a browser navigation system using a deque. You’ll build a system that:
+# 1. Visits pages (pushes new URLs to the left like a stack).
+# 2. Goes back to the previous page (pops from the left).
+# 3. Shows the current page.
+# 4. Prints the entire browsing history (from most recent to oldest).
+print('--------Problem--------')
+
+history = deque()
+forward_pages = deque()
+
+def visit_page(s: str):
+    history.appendleft(s)
+    forward_pages.clear()
+
+def go_back():
+    if len(history) > 1:
+        page = history.popleft()
+        forward_pages.appendleft(page)
+    else:
+        print('No pages to go back to')
+
+def current_page():
+    if len(history) > 0:
+        return history[0]
+    else:
+        return 'No current page'
+
+def print_history():
+    print(f'History => {history}')
+
+def forward_page():
+    if len(forward_pages) > 0 and current_page() != forward_pages[0]:
+        page = forward_pages.popleft()
+        history.appendleft(page)
+
+print_history()
+visit_page('google.com')
+visit_page('stavrom.com')
+visit_page('github.com')
+print_history()
+go_back()
+print_history()
+page = current_page()
+print(f'Current page => {page}')
+go_back()
+forward_page()
+print_history()
+go_back()
+go_back()
