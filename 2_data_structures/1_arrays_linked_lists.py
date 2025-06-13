@@ -118,3 +118,31 @@ print(f'Linked list after pop left => {l}')
 print(f'Poped element => {x}')
 l.remove('q')
 print(f'Linked list after remove(\'q\') => {l}')
+
+# Queue
+queue = deque()
+
+queue.append("Mary")
+queue.append("John")
+queue.append("Susan")
+
+print(f'Queue => {queue}')
+
+first = queue.popleft()
+
+print(f'Queue after pop => {queue}')
+print(f'Queue poped element => {first}')
+
+# Stack
+stack = deque()
+
+stack.appendleft('Page1')
+stack.appendleft('Page2')
+stack.appendleft('Page3')
+
+print(f'Stack => {stack}')
+
+first = stack.popleft()
+
+print(f'Stack after pop => {stack}')
+print(f'Stack poped element => {first}')
