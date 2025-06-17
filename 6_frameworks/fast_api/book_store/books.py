@@ -2,6 +2,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
-def read_api():
-    return {'Welcome': 'Mihai'}
+@app.get("/{name}")
+def read_api(name: str):
+    return {'Welcome': name}
