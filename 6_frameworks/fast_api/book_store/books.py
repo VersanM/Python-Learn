@@ -1,8 +1,15 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from uuid import UUID
+import models
+from database import engine, SessionLocal
+from sqlalchemy.orm import Session
 
 app = FastAPI()
+
+models.Base.metadata.create_all(bind=engine)
+
+
 
 class Book(BaseModel):
     id: UUID
