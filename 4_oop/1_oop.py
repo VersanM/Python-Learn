@@ -21,29 +21,32 @@ print(f'{zombie.type_of_enemy} has {zombie.health_points} health points and can 
 # Abstraction
 print(zombie.talk())
 
-# Constructors
-class EnemyNew:
-    def __init__(self, type_of_enemy, health_points=100, attack_damage = 10):
-        self.type_of_enemy = type_of_enemy
-        self.health_points = health_points
-        self.attack_damage = attack_damage
+# Inheritance
+class Animal:
+    weight: int
+    color: str
+    age: int
+    animal_type: str
+
+    def eat(self):
+        print("Animal eating")
     
+    def sleep(self):
+        print("Animal sleeping")
+
+class Dog(Animal):
+    # all animal attributes
+    can_shed: bool
+    domestic_name: str
+
     def talk(self):
-        print(f'I am a {self.type_of_enemy}. Be prepared to fight!')
+        print("Bark!")
 
-    def walk_forward(self):
-        print(f'{self.type_of_enemy} moves closer to you.')
+    def eat(self):
+        print("Chews on bone!")
 
-    def attack(self):
-        print(f'{self.type_of_enemy} attacks for {self.attack_damage} damage')
-
-
-zombie = EnemyNew(type_of_enemy='Zombie')
-zombie.talk()
-
-# Encapsulation - use __ before private fields + add getter and setters
-class EnemyEnc:
-    def __init__(self, type_of_enemy, health_points=100, attack_damage = 10):
+class EnemyBase:
+    def __init__(self, type_of_enemy, health_points, attack_damage):
         self.__type_of_enemy = type_of_enemy
         self.health_points = health_points
         self.attack_damage = attack_damage
@@ -52,14 +55,8 @@ class EnemyEnc:
         return self.__type_of_enemy
     
     def talk(self):
-        print(f'I am a {self.__type_of_enemy}. Be prepared to fight!')
+        print("I am an Enemy!")
 
     def walk_forward(self):
-        print(f'{self.__type_of_enemy} moves closer to you.')
+        print(f"{self.__type_of_enemy} moves closer to you")
 
-    def attack(self):
-        print(f'{self.__type_of_enemy} attacks for {self.attack_damage} damage')
-
-zombie = EnemyEnc(type_of_enemy='Zombie')
-zombie.talk()
-print(zombie.get_type_of_enemy())
