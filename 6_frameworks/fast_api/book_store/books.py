@@ -25,6 +25,14 @@ books = []
 def read_api():
     return books
 
+@app.get("/")
+def get_books_by_rating(rating: int):
+    result_books = []
+    for book in books:
+        if book.rating >= rating:
+            result_books.append(book)
+    return result_books
+
 @app.post("/")
 def create_book(book: Book):
     books.append(book)
