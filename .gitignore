@@ -5,3 +5,4 @@
 6_frameworks/fast_api/book_store/__pycache__/books.cpython-313.pyc
 6_frameworks/fast_api/book_store/books.db
 *.pyc
+6_frameworks/fast_api/todo_app/todosapp.db
